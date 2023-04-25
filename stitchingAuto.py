@@ -39,7 +39,7 @@ for i, tile in enumerate(tiles):
     stack = IJ.openImage(os.path.join(input_directory, tile))
 
     # Iterate through all the slices
-    for slice in range(1, 100):
+    for slice in range(1, slices + 1):
         # Create a subfolder for each slice in the output directory
         slice_folder = os.path.join(output_directory, "slice_{}".format(slice))
         if not os.path.exists(slice_folder):
@@ -53,7 +53,7 @@ for i, tile in enumerate(tiles):
  		
 
 # Iterate through all the subfolders to stitch the 4 images in each subfolder
-for slice in range(1, 100):
+for slice in range(1, slices + 1):
     slice_folder = os.path.join(output_directory, "slice_{}".format(slice))
 
     # Stitch the 4 images using the Grid/Collection stitching plugin
